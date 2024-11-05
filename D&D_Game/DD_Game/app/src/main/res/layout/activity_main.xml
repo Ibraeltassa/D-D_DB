@@ -1,0 +1,369 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dungeons And Dragons"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+
+        <!-- Botões para Gerenciar Personagens -->
+        <Button
+            android:id="@+id/btnInsert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inserir Personagem" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atualizar Personagem" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deletar Personagem" />
+
+        <Button
+            android:id="@+id/btnDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exibir Personagens" />
+
+        <!-- Área para Exibir Resultados -->
+        <TextView
+            android:id="@+id/tvResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado aparecerá aqui"
+            android:textSize="16sp"
+            android:paddingTop="16dp"
+            android:textColor="#000000" />
+
+
+
+
+        <TextView
+            android:id="@+id/tv_nome_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome do Personagem:"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/et_nome_personagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o nome do personagem"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Scroll Horizontal para escolher a raça -->
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_anao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ANÃO"/>
+
+                <Button
+                    android:id="@+id/btn_elfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ELFO"/>
+
+                <Button
+                    android:id="@+id/btn_gnomo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GNOMO"/>
+
+                <Button
+                    android:id="@+id/btn_humano"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HUMANO"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Exibe a raça selecionada -->
+        <TextView
+            android:id="@+id/tv_raca_selecionada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raça Selecionada: Nenhuma"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_pontos_restantes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pontos Restantes: 27"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Atributos e Botões de Ajuste -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <!-- Força -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Força: "
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_forca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/btn_forca_menos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-1"/>
+
+                <Button
+                    android:id="@+id/btn_forca_mais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1" />
+            </LinearLayout>
+
+            <!-- Destreza -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Destreza: "
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_destreza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/btn_destreza_menos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-1"/>
+
+                <Button
+                    android:id="@+id/btn_destreza_mais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1" />
+            </LinearLayout>
+
+            <!-- Constituição -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Constituição: "
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_constituicao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/btn_constituicao_menos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-1"/>
+
+                <Button
+                    android:id="@+id/btn_constituicao_mais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1"/>
+            </LinearLayout>
+
+            <!-- Sabedoria -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sabedoria: "
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_sabedoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/btn_sabedoria_menos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-1"/>
+
+                <Button
+                    android:id="@+id/btn_sabedoria_mais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1"/>
+            </LinearLayout>
+
+            <!-- Inteligência -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inteligência: "
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_inteligencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/btn_inteligencia_menos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-1"/>
+
+                <Button
+                    android:id="@+id/btn_inteligencia_mais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1"/>
+            </LinearLayout>
+
+            <!-- Carisma -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carisma: "
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_carisma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/btn_carisma_menos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-1"/>
+
+                <Button
+                    android:id="@+id/btn_carisma_mais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Exibição de Pontos de Vida -->
+        <TextView
+            android:id="@+id/tv_pontos_vida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pontos de Vida: 0"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_personagem_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personagem final aparecerá aqui"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tv_bonus_racial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bônus Racial:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
